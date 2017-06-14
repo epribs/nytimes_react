@@ -1,21 +1,21 @@
 // Require our dependencies
-import express from 'express';
-import mongoose from 'mongoose';
-import bluebird from 'bluebird';
-import bodyParser from 'body-parser';
-import routes from './config/routes';
+var express = require("express");
+var mongoose = require("mongoose");
+var bluebird = require("bluebird");
+var bodyParser = require("body-parser");
+var routes = require("./app/config/routes");
 
 
 // Set up a default port, configure mongoose, configure our middleware
-const PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 mongoose.Promise = bluebird;
-const app = express();
+var app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + "/public"));
 app.use("/", routes);
 
-const db = process.env.MONGODB_URI || "mongodb://localhost/nytimes_react";
+var db = process.env.MONGODB_URI || "mongodb://localhost/nytimes_react";
 
 // Connect mongoose to our database
 mongoose.connect(db, function(error) {

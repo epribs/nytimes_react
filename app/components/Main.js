@@ -1,5 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDom from 'React-Dom';
 import routes from './config/routes';
 
-ReactDom.render(routes, documnet.getElementById('app'));
+class Main extends React.Component {
+	render() {
+		return (
+			<div className='container'>
+				<div className='jumbotron'>
+					<h1><span className="glyphicon glyphicon-list-alt"></span> New York Times Search</h1>
+				</div>
+
+				<Query />
+
+				<Results />
+
+				<Saved />
+			</div>
+		)
+	}
+}
