@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDom from 'React-Dom';
-import routes from './config/routes';
+import ReactDom from 'react-dom';
 
 class Main extends React.Component {
 	render() {
@@ -10,12 +9,10 @@ class Main extends React.Component {
 					<h1><span className="glyphicon glyphicon-list-alt"></span> New York Times Search</h1>
 				</div>
 
-				<Query />
-
-				<Results />
-
-				<Saved />
+				
 			</div>
 		)
 	}
 }
+
+export default Main;
